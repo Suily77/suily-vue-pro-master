@@ -4,9 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.psl.suily</groupId>
-    <artifactId>ruoyi-vue-pro-master</artifactId>
+    <groupId>com.psl.boot</groupId>
+    <artifactId>suily</artifactId>
+    <packaging>pom</packaging>
     <version>${project.version}</version>
+    <!-- 子模块 -->
+    <modules>
+        <module>suily-dependencies</module>
+    </modules>
     <name>${project.artifactId}</name>
     <description>创建一个maven项目脚手架，名字是Suily</description>
     <properties>
