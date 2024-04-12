@@ -7,6 +7,7 @@
     <groupId>com.psl.boot</groupId>
     <artifactId>suily</artifactId>
     <packaging>pom</packaging>
+    <!--https://maven.apache.org/maven-ci-friendly.html-->
     <version>${revision}</version>
     <!-- 子模块 -->
     <modules>
