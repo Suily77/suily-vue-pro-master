@@ -6,15 +6,68 @@
     <groupId>com.psl.boot</groupId>
     <artifactId>suily-dependencies</artifactId>
     <packaging>pom</packaging>
-    <version>${project.version}</version>
+    <version>${revision}</version>
 
     <name>${project.artifactId}</name>
     <description>基础bom文件，管理整个项目的依赖版本</description>
     <url>https://github.com/Suily77/suily</url>
 
     <properties>
-        <project.version>1.0-SNAPSHOT</project.version>
+        <revision>1.0-SNAPSHOT</revision>
+        <!-- 统一依赖管理 -->
+        <!--springboot版本管理-->
+        <spring.boot.version>2.7.18</spring.boot.version>
+
+        <!-- Test 测试相关 -->
+        <mockito-inline.version>4.11.0</mockito-inline.version>
     </properties>
 
+    <dependencies>
+
+    </dependencies>
+
+    <!-- 依赖管理版本bom -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Spring 核心 -->
+            <dependency>
+                <!-- 用于生成自定义的 Spring @ConfigurationProperties 配置类的说明文件 -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-configuration-processor</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-inline</artifactId>
+                <version>${mockito-inline.version}</version> <!-- 支持 Mockito 的 final 类与 static 方法的 mock -->
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${spring.boot.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>asm</artifactId>
+                        <groupId>org.ow2.asm</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.mockito</groupId>
+                        <artifactId>mockito-core</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>
