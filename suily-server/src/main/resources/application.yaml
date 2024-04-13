@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: suily-server
+    version: 1.0.0
+
+  profiles:
+    active: local
+
+
