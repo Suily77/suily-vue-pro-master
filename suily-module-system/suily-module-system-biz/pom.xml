@@ -10,21 +10,23 @@
     <parent>
         <groupId>com.psl.boot</groupId>
         <artifactId>suily-module-system</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
 
-    <artifactId>suily-module-system-api</artifactId>
+    <artifactId>suily-module-system-biz</artifactId>
     <packaging>jar</packaging>
 
     <name>${project.artifactId}</name>
-    <description>${project.name} system 模块 API，暴露给其它模块调用</description>
+    <description>${project.name} System的框架模块，用户，权限，数据字典等这是一个SDK</description>
     <url></url>
 
     <dependencies>
         <dependency>
             <groupId>com.psl.boot</groupId>
-            <artifactId>suily-common</artifactId>
+            <artifactId>suily-module-system-api</artifactId>
+            <version>${revision}</version>
         </dependency>
+
     </dependencies>
 
 </project>

@@ -21,6 +21,7 @@
     <url>https://github.com/Suily77/suily-vue-pro-master</url>
     <modules>
         <module>suily-module-system-api</module>
+        <module>suily-module-system-biz</module>
     </modules>
 
     <properties>
