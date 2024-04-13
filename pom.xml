@@ -13,6 +13,7 @@
     <modules>
         <module>suily-dependencies</module>
         <module>suily-framework</module>
+        <module>suily-server</module>
     </modules>
     <name>${project.artifactId}</name>
     <description>创建一个maven项目脚手架，名字是Suily</description>
@@ -34,11 +35,11 @@
 
     <!-- 使用 huawei / aliyun 的 Maven 源，提升下载速度 -->
     <repositories>
-<!--        <repository>-->
-<!--            <id>huaweicloud</id>-->
-<!--            <name>huawei</name>-->
-<!--            <url>https://mirrors.huaweicloud.com/repository/maven/</url>-->
-<!--        </repository>-->
+        <repository>
+            <id>huaweicloud</id>
+            <name>huawei</name>
+            <url>https://mirrors.huaweicloud.com/repository/maven/</url>
+        </repository>
         <repository>
             <id>aliyunmaven</id>
             <name>aliyun</name>

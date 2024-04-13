@@ -12,6 +12,7 @@
     <modules>
         <module>suily-common</module>
         <module>suily-spring-boot-starter-web</module>
+        <module>suily-spring-boot-starter-mybatis</module>
     </modules>
 
     <artifactId>suily-framework</artifactId>
