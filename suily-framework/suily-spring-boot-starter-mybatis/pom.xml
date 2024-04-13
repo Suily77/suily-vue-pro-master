@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  ~ Copyright (c) 2024. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  ~ Morbi non lorem porttitor neque feugiat blandit. Ut vitae ipsum eget quam lacinia accumsan.
-  ~ Etiam sed turpis ac ipsum condimentum fringilla. Maecenas magna.
-  ~ Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus.
-  ~ Vestibulum commodo. Ut rhoncus gravida arcu.
+  ~ Copyright (c) 2024. Suily. All rights reserved..
   -->
 
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -21,7 +17,7 @@
 
     <name>${project.artifactId}</name>
     <description>数据库ORM</description>
-    <url></url>
+    <url>https://github.com/Suily77/suily-vue-pro-master</url>
 
     <dependencies>
         <dependency>

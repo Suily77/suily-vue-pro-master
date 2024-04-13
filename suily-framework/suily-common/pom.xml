@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2024. Suily. All rights reserved..
+  -->
+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -11,7 +15,7 @@
 
     <name>${project.artifactId}</name>
     <description>定义基础pojo类、枚举类、工具类等等</description>
-    <url></url>
+    <url>https://github.com/Suily77/suily-vue-pro-master</url>
 
     <artifactId>suily-common</artifactId>
     <packaging>jar</packaging>
