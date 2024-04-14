@@ -1,6 +1,5 @@
-Application Version: ${yudao.info.version}
+Application Version: ${suily.info.version}
 Spring Boot Version: ${spring-boot.version}
-
 _|      _|    _|_|        _|_|_|    _|    _|    _|_|_|
 _|_|    _|  _|    _|      _|    _|  _|    _|  _|
 _|  _|  _|  _|    _|      _|_|_|    _|    _|  _|  _|_|

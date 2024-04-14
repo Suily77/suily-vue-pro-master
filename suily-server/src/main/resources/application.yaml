@@ -6,5 +6,9 @@ spring:
   profiles:
     active: local
 
+suily:
+  info:
+    version: 1.0.0
+
 
 

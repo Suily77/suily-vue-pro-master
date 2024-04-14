@@ -21,11 +21,6 @@
     <packaging>jar</packaging>
 
     <dependencies>
-        <dependency>
-            <groupId>com.psl.boot</groupId>
-            <artifactId>suily-dependencies</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
         <dependency>
             <groupId>org.springframework</groupId>
