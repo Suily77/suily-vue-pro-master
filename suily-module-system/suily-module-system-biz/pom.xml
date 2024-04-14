@@ -27,6 +27,13 @@
             <version>${revision}</version>
         </dependency>
 
+        <!-- web相关 -->
+        <dependency>
+            <groupId>com.psl.boot</groupId>
+            <artifactId>suily-spring-boot-starter-web</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
 </project>
