@@ -14,7 +14,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>suily-spring-boot-starter-web</artifactId>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
     <name>${project.artifactId}</name>
     <description>web框架，增加日志，全集异常，脱敏，错误码统一</description>
