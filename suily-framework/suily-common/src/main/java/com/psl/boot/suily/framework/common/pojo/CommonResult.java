@@ -46,7 +46,7 @@ public class CommonResult<T> {
     }
 
     /**
-     * 错误返回
+     * 错误返回,不带返回数据
      * @param code 错误码，错误有很多种
      * @param msg 错误信息
      * @return 返回结果类
