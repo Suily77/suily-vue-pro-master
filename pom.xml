@@ -31,6 +31,8 @@
         <revision>2.0-SNAPSHOT</revision>
         <!-- maven相关版本-->
         <java.version>1.8</java.version>
+        <!-- 插件版本 -->
+        <flatten-maven-plugin.version>1.5.0</flatten-maven-plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -43,13 +45,56 @@
         </dependencies>
     </dependencyManagement>
 
+    <!-- 插件 -->
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>flatten-maven-plugin</artifactId>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <!-- 统一 revision 版本
+                flatten-maven-plugin插件，通过将pom.xml文件里面的${revision}替换成真实的版本号，
+                然后生成.flattened-pom.xml文件，
+                然后mvn install或mvn package就以.flattened-pom.xml文件进行打包。
+             -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
+                <version>${flatten-maven-plugin.version}</version>
+                <configuration>
+                    <flattenMode>resolveCiFriendliesOnly</flattenMode>
+                    <updatePomFile>true</updatePomFile>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>flatten</goal>
+                        </goals>
+                        <id>flatten</id>
+                        <phase>process-resources</phase>
+                    </execution>
+                    <execution>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                        <id>flatten.clean</id>
+                        <phase>clean</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
     <!-- 使用 huawei / aliyun 的 Maven 源，提升下载速度 -->
     <repositories>
-<!--        <repository>-->
-<!--            <id>huaweicloud</id>-->
-<!--            <name>huawei</name>-->
-<!--            <url>https://mirrors.huaweicloud.com/repository/maven/</url>-->
-<!--        </repository>-->
+        <repository>
+            <id>huaweicloud</id>
+            <name>huawei</name>
+            <url>https://mirrors.huaweicloud.com/repository/maven/</url>
+        </repository>
         <repository>
             <id>aliyunmaven</id>
             <name>aliyun</name>
