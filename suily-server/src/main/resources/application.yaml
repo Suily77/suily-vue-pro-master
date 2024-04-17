@@ -1,14 +1,14 @@
 spring:
   application:
     name: suily-server
-    version: 1.0.0
+    version: 2.0.0
 
   profiles:
     active: local
 
 suily:
   info:
-    version: 1.0.0
+    version: 2.0.0
 
 
 
