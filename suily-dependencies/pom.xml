@@ -17,7 +17,7 @@
     <url>https://github.com/Suily77/suily-vue-pro-master</url>
 
     <properties>
-        <revision>1.0-SNAPSHOT</revision>
+        <revision>2.0-SNAPSHOT</revision>
         <!-- 统一依赖管理 -->
         <!--springboot版本管理-->
         <spring.boot.version>2.7.18</spring.boot.version>
