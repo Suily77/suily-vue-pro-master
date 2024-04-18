@@ -21,5 +21,6 @@ public class BannerApplicationRunner implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
         System.out.println("============System开始启动====================");
+        System.out.println("登录：127.0.0.1:18080");
     }
 }
