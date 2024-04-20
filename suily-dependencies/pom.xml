@@ -23,11 +23,16 @@
         <!-- 统一依赖管理 -->
         <!--springboot版本管理-->
         <spring.boot.version>2.7.18</spring.boot.version>
-
+        <!-- Web 相关 -->
+        <springdoc.version>1.6.15</springdoc.version>
         <!-- Test 测试相关 -->
         <mockito-inline.version>4.11.0</mockito-inline.version>
         <!-- 插件版本，管理版本 -->
         <flatten-maven-plugin.version>1.5.0</flatten-maven-plugin.version>
+        <!-- 工具类相关 -->
+        <lombok.version>1.18.30</lombok.version>
+        <mapstruct.version>1.5.5.Final</mapstruct.version>
+        <hutool.version>5.8.25</hutool.version>
     </properties>
 
     <dependencies>
@@ -58,6 +63,30 @@
                 <groupId>org.mockito</groupId>
                 <artifactId>mockito-inline</artifactId>
                 <version>${mockito-inline.version}</version> <!-- 支持 Mockito 的 final 类与 static 方法的 mock -->
+            </dependency>
+
+            <!--Web相关-->
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-ui</artifactId>
+                <version>${springdoc.version}</version>
+            </dependency>
+
+            <!-- 工具类相关-->
+            <dependency>
+                <groupId>com.psl.boot</groupId>
+                <artifactId>suily-common</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
             </dependency>
 
             <dependency>
