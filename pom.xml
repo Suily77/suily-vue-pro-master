@@ -22,7 +22,6 @@
         <!-- Server主项目，业务代码 -->
         <module>suily-server</module>
         <module>suily-module-system</module>
-        <module>suily-framework/suily-spring-boot-starter-biz-tenant</module>
         <!-- 各个模块的拓展 -->
 
     </modules>
