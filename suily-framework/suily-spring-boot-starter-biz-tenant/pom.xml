@@ -9,17 +9,22 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.psl.boot</groupId>
-        <artifactId>suily</artifactId>
-        <version>2.0-SNAPSHOT</version>
-        <relativePath>../../pom.xml</relativePath>
+        <artifactId>suily-framework</artifactId>
+        <version>${revision}</version>
     </parent>
 
     <artifactId>suily-spring-boot-starter-biz-tenant</artifactId>
+    <packaging>jar</packaging>
 
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <name>${project.artifactId}</name>
+    <description>多租户模块</description>
+    <url></url>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.psl.boot</groupId>
+            <artifactId>suily-common</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
