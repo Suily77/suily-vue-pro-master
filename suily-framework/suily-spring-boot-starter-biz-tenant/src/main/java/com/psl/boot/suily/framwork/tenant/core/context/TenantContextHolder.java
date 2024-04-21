@@ -4,6 +4,8 @@
 
 package com.psl.boot.suily.framwork.tenant.core.context;
 
+import com.alibaba.ttl.TransmittableThreadLocal;
+
 /**
  * @Author: pengsulong@foxmail.com
  * @Date: 2024/4/21
@@ -16,8 +18,8 @@ public class TenantContextHolder {
     /**
      * 当前租户的编号
      */
-    private static final ThreadLocal<Long> TENANT_ID = new ThreadLocal<>();
-    private static final ThreadLocal<Boolean> IGNORE = new ThreadLocal<>();
+    private static final ThreadLocal<Long> TENANT_ID = new TransmittableThreadLocal<>();
+    private static final ThreadLocal<Boolean> IGNORE = new TransmittableThreadLocal<>();
 
     /**
      * 设置当前租户的编号
