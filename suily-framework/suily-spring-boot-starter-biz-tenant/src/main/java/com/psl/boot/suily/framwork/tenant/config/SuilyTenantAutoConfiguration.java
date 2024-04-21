@@ -19,10 +19,11 @@ import org.springframework.context.annotation.Bean;
  * @Description 对多个类的自动配置进行整合
  */
 @AutoConfiguration
+// 允许使用 suily.tenant.enable=false 禁用多租户,这里没生效注解
+// @ConfigurationProperties注解，主要是用来把properties或者yml配置文件转化为bean来使用的,默认matchIfMissing = true
+@ConditionalOnProperty(prefix = "suily.tenant", value = "enable", matchIfMissing = true)
+// 启用TenantProperties的 @ConfigurationProperties注解生效
 @EnableConfigurationProperties(TenantProperties.class)
-// 允许使用 suily.tenant.enable=false 禁用多租户
-@ConditionalOnProperty(prefix = "suily.tenant", value = "enabled", matchIfMissing = true)
-
 public class SuilyTenantAutoConfiguration {
 
     // ==============WEB 过滤器====================
