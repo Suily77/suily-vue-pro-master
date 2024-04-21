@@ -42,13 +42,6 @@ public class TenantSecurityWebFilter extends ApiRequestFilter {
         Long tenantId = TenantContextHolder.getTenantId();
         // 1.登录的用户，校验是否有权限访问该租户，避免越权问题
 
-        // 2.请求未带租户的编号，检查是否是忽略的 URL，否则也不允许访问
-
-        // 3.校验租户是合法，例如说被禁用、到期
-        // 4.设置租户编号到上下文
-        // 5.清理租户编号
-        // 6.执行过滤器
-        // 7.清理租户编号
         // 3.如果非允许忽略租户的 URL，则校验租户是否合法
         if (!isIgnoreTenantUrl(request)) {
             // 1.如果未传递租户编号，则直接返回 400
@@ -66,11 +59,16 @@ public class TenantSecurityWebFilter extends ApiRequestFilter {
             }catch (Throwable ex){
                 log.error("[doFilterInterbal][URL ({}/{}) 校验租户失败，校验租户是合法，例如说被禁用、到期]", request.getRequestURI(), request.getMethod(), ex);
                 ServletUtils.writeJSON(response, CommonResult.error(GlobalErrorCodeConstants.BAD_REQUEST.getCode(),"到期"));
+                // 异常提前结束
+                return;
             }
-
-
-            TenantContextHolder.setTenantId(tenantId);
+        }else {
+            if(tenantId == null){
+                // 设置为忽略租户
+                TenantContextHolder.setIgnore(true);
+            }
         }
+        // 继续执行过滤器
         filterChain.doFilter(request, response);
     }
 
