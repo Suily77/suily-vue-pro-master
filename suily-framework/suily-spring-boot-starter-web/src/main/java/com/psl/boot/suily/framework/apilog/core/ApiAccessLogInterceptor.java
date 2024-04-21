@@ -6,12 +6,11 @@ package com.psl.boot.suily.framework.apilog.core;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.StrUtil;
-import cn.hutool.json.JSON;
-import cn.hutool.json.JSONString;
+
 import com.psl.boot.suily.framework.common.util.servlet.ServletUtils;
 import com.psl.boot.suily.framework.common.util.spring.SpringUtils;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.lang.Nullable;
+
 import org.springframework.util.StopWatch;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -46,7 +45,7 @@ public class ApiAccessLogInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         // HttpServletRequest转化成json
         String requestJson = ServletUtils.getParamMap(request).toString();
-        log.info("request: {}", requestJson.toString());
+        log.info("request: {}", requestJson);
         /**
          * 这段Java代码的功能是在处理Web请求的过程中，对处理器对象（handler）进行类型检查和封装
          * 并将其作为属性存储到当前HTTP请求（request）中
