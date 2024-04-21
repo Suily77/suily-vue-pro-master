@@ -11,6 +11,7 @@ import cn.hutool.json.JSONString;
 import com.psl.boot.suily.framework.common.util.servlet.ServletUtils;
 import com.psl.boot.suily.framework.common.util.spring.SpringUtils;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.lang.Nullable;
 import org.springframework.util.StopWatch;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -79,5 +80,23 @@ public class ApiAccessLogInterceptor implements HandlerInterceptor {
             request.setAttribute(API_ACCESS_LOG_INTERCEPTOR_STOP_WATCH, stopWatch);
         }
         return true;
+    }
+
+    /**
+     * 拦截器方法
+     * 拦截请求之后的操作,打印URI请求完成时间
+     *
+     * @param request  请求
+     * @param response 响应
+     * @param handler  处理器
+     */
+    @Override
+    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
+        // 打印返回的response
+        if (!SpringUtils.isProd()) {
+            StopWatch stopWatch =(StopWatch) request.getAttribute(API_ACCESS_LOG_INTERCEPTOR_STOP_WATCH);
+            stopWatch.stop();
+            log.info("[afterCompleteion][完成请求 URL({}) 耗时({})ms]",request.getRequestURI(),stopWatch);
+        }
     }
 }
