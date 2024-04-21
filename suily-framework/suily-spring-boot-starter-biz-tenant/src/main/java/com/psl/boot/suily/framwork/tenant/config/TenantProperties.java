@@ -13,6 +13,7 @@ import java.util.Set;
  * @Author: pengsulong@foxmail.com
  * @Date: 2024/4/21
  * @Description 多租户的配置类
+ * 配置多租户的属性，忽略URL等
  */
 @Data
 public class TenantProperties {
