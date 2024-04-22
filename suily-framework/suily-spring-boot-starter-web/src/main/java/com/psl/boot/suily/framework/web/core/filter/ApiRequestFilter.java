@@ -19,7 +19,7 @@ import java.io.IOException;
  * @Description 过滤 /admin-api、/app-api 等 API 请求的过滤器
  * 继承 OncePerRequestFilter 它的主要作用是确保每个请求只会被过滤一次
  */
-public class ApiRequestFilter extends OncePerRequestFilter {
+public abstract class ApiRequestFilter extends OncePerRequestFilter {
     /**
      * 判断是否需要过滤
      *
