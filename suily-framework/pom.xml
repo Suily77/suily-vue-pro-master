@@ -15,8 +15,10 @@
     <packaging>pom</packaging>
     <modules>
         <module>suily-common</module>
+        <!-- 各个模块的拓展 -->
         <module>suily-spring-boot-starter-web</module>
         <module>suily-spring-boot-starter-mybatis</module>
+        <module>suily-spring-boot-starter-biz-tenant</module>
     </modules>
 
     <artifactId>suily-framework</artifactId>

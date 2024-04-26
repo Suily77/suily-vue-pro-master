@@ -2,7 +2,9 @@
 <!--
   ~ Copyright (c) 2024. Suily. All rights reserved..
   -->
-
+<!--
+    用于依赖版本管理的模块，可以单独部署一个SDK
+-->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -21,9 +23,16 @@
         <!-- 统一依赖管理 -->
         <!--springboot版本管理-->
         <spring.boot.version>2.7.18</spring.boot.version>
-
+        <!-- Web 相关 -->
+        <springdoc.version>1.6.15</springdoc.version>
         <!-- Test 测试相关 -->
         <mockito-inline.version>4.11.0</mockito-inline.version>
+        <!-- 插件版本，管理版本 -->
+        <flatten-maven-plugin.version>1.5.0</flatten-maven-plugin.version>
+        <!-- 工具类相关 -->
+        <lombok.version>1.18.30</lombok.version>
+        <mapstruct.version>1.5.5.Final</mapstruct.version>
+        <hutool.version>5.8.25</hutool.version>
     </properties>
 
     <dependencies>
@@ -56,6 +65,30 @@
                 <version>${mockito-inline.version}</version> <!-- 支持 Mockito 的 final 类与 static 方法的 mock -->
             </dependency>
 
+            <!--Web相关-->
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-ui</artifactId>
+                <version>${springdoc.version}</version>
+            </dependency>
+
+            <!-- 工具类相关-->
+            <dependency>
+                <groupId>com.psl.boot</groupId>
+                <artifactId>suily-common</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-test</artifactId>
@@ -73,5 +106,37 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <!-- 2.插件部分 -->
+    <build>
+        <plugins>
+            <!-- 统一 revision 版本 -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
+                <version>${flatten-maven-plugin.version}</version>
+                <configuration>
+                    <flattenMode>resolveCiFriendliesOnly</flattenMode>
+                    <updatePomFile>true</updatePomFile>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>flatten</goal>
+                        </goals>
+                        <id>flatten</id>
+                        <phase>process-resources</phase>
+                    </execution>
+                    <execution>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                        <id>flatten.clean</id>
+                        <phase>clean</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

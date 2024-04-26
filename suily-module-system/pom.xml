@@ -20,6 +20,7 @@
     <description>管理控制台的框架,用户、部门、权限</description>
     <url>https://github.com/Suily77/suily-vue-pro-master</url>
     <modules>
+        <!-- 各个模块的拓展 -->
         <module>suily-module-system-api</module>
         <module>suily-module-system-biz</module>
     </modules>

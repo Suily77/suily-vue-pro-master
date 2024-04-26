@@ -1,1 +1,3 @@
 com.psl.boot.suily.framework.banner.config.SuilyBannerAutoConfiguration
+com.psl.boot.suily.framework.apilog.config.SuilyApiLogAutoConfiguration
+com.psl.boot.suily.framework.web.config.SuilyWebAutoConfiguration

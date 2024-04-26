@@ -9,34 +9,29 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.psl.boot</groupId>
-        <artifactId>suily</artifactId>
+        <artifactId>suily-framework</artifactId>
         <version>${revision}</version>
     </parent>
 
-    <artifactId>suily-server</artifactId>
+    <artifactId>suily-spring-boot-starter-biz-tenant</artifactId>
     <packaging>jar</packaging>
 
     <name>${project.artifactId}</name>
-    <description>后端服务的主项目入口</description>
-    <url>https://github.com/Suily77/suily-vue-pro-master</url>
+    <description>多租户模块</description>
+    <url></url>
 
     <dependencies>
-        <!-- 引入system的SDK框架-->
         <dependency>
             <groupId>com.psl.boot</groupId>
-            <artifactId>suily-module-system-biz</artifactId>
+            <artifactId>suily-common</artifactId>
             <version>${revision}</version>
         </dependency>
 
-        <!-- spring boot 配置所需依赖,两边都需要配置 -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
-            <version>2.7.18</version>
+            <groupId>com.psl.boot</groupId>
+            <artifactId>suily-spring-boot-starter-web</artifactId>
+            <version>${revision}</version>
         </dependency>
-
     </dependencies>
-
 
 </project>

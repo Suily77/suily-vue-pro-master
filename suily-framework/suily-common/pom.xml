@@ -11,6 +11,10 @@
         <groupId>com.psl.boot</groupId>
         <version>${revision}</version>
     </parent>
+    <properties>
+        <spring.boot.version>2.7.18</spring.boot.version>
+        <spring.version>5.3.31</spring.version>
+    </properties>
     <modelVersion>4.0.0</modelVersion>
 
     <name>${project.artifactId}</name>
@@ -21,14 +25,89 @@
     <packaging>jar</packaging>
 
     <dependencies>
+        <!-- spring核心 -->
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
-            <version>5.3.31</version>
-            <scope>provided</scope>
+            <scope>provided</scope> <!-- 设置为 provided，只有工具类需要使用到 -->
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
+            <scope>provided</scope> <!-- 设置为 provided，只有工具类需要使用到 -->
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <scope>provided</scope> <!-- 设置为 provided，只有工具类需要使用到 -->
+        </dependency>
+        <dependency>
+            <!-- 用于生成自定义的 Spring @ConfigurationProperties 配置类的说明文件 -->
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <!-- Spring核心 End -->
+
+        <!-- Web 相关 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <scope>provided</scope> <!-- 设置为 provided，只有工具类需要使用到 -->
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <scope>provided</scope> <!-- 设置为 provided，主要是 PageParam 使用到 -->
+            <version>1.6.15</version>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <scope>provided</scope> <!-- 设置为 provided，只有工具类需要使用到 -->
+        </dependency>
+
+        <!-- 工具类相关start -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <!-- springUtil的工具类 -->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.8.25</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>transmittable-thread-local</artifactId>
+            <version>2.14.5</version>
+        </dependency>
+        <!-- 工具类相关end -->
+
+        <!-- Test 测试相关 start -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <!-- 暂时无法读取suily-dependencies的配置，之后归一 -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 
 </project>
